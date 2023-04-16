@@ -1393,7 +1393,7 @@ class _Home1WidgetState extends State<Home1Widget>
                           16.0, 15.0, 16.0, 25.0),
                       child: InkWell(
                         onTap: () async {
-                          context.pushNamed('DailyWorkout');
+                          context.pushNamed('StoryWorkout');
                         },
                         child: Container(
                           width: double.infinity,
@@ -1428,7 +1428,7 @@ class _Home1WidgetState extends State<Home1Widget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Día 01 - Bíceps & Hombro',
+                                        'Mira tus avances',
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
@@ -1437,22 +1437,6 @@ class _Home1WidgetState extends State<Home1Widget>
                                               fontSize: 17.0,
                                               fontWeight: FontWeight.w500,
                                             ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Tu Entrenamiento Diario',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Roboto',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                fontSize: 13.0,
-                                              ),
-                                        ),
                                       ),
                                     ],
                                   ),

@@ -32,3 +32,4 @@ export '/botonesdinamicos/botonesdinamicos_widget.dart'
     show BotonesdinamicosWidget;
 export '/create_guide/create_guide_widget.dart' show CreateGuideWidget;
 export '/login2/login2_widget.dart' show Login2Widget;
+export '/story_workout/story_workout_widget.dart' show StoryWorkoutWidget;

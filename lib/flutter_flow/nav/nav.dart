@@ -214,6 +214,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Login2',
           path: '/login2',
           builder: (context, params) => Login2Widget(),
+        ),
+        FFRoute(
+          name: 'StoryWorkout',
+          path: '/storyWorkout',
+          builder: (context, params) => StoryWorkoutWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
