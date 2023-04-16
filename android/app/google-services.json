@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1043257026823",
+    "project_id": "iron-body-e88f7",
+    "storage_bucket": "iron-body-e88f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043257026823:android:4f0a8ebfb82b98f7b57da2",
+        "android_client_info": {
+          "package_name": "com.mycompany.ironbody"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043257026823-hhbc7fkumkhd3bju99e3n1kqsv46anib.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.ironbody",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1043257026823-9ochbpov68s8anql7k49qvrsua39ueus.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX9vXaw5ZF1u9j-M42KODi6OZcIZIRvIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043257026823-9ochbpov68s8anql7k49qvrsua39ueus.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1043257026823-9vfbsohkl6uj3mp510322gefijrmqi8c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.ironbody"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
