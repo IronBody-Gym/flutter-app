@@ -63,8 +63,8 @@ class _LineChart extends StatelessWidget {
 
   List<LineChartBarData> get lineBarsData1 => [
         lineChartBarData1_1,
-        lineChartBarData1_2,
-        lineChartBarData1_3,
+        // lineChartBarData1_2,
+        // lineChartBarData1_3,
       ];
 
   LineTouchData get lineTouchData2 => LineTouchData(
@@ -88,8 +88,8 @@ class _LineChart extends StatelessWidget {
 
   List<LineChartBarData> get lineBarsData2 => [
         lineChartBarData2_1,
-        lineChartBarData2_2,
-        lineChartBarData2_3,
+        // lineChartBarData2_2,
+        // lineChartBarData2_3,
       ];
 
   Widget leftTitleWidgets(double value, TitleMeta meta) {

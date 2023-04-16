@@ -30,7 +30,6 @@ class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
-
   static _MyAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>()!;
 }
@@ -78,6 +77,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'ironBody',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
