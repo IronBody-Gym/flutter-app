@@ -338,7 +338,7 @@ class _Login2WidgetState extends State<Login2Widget> {
 
                                         context.goNamedAuth('Home1', mounted);
                                       },
-                                      text: 'Button',
+                                      text: 'Inciar',
                                       icon: Icon(
                                         Icons.arrow_right_outlined,
                                         size: 15.0,
