@@ -213,7 +213,7 @@ class _FirstStepWidgetState extends State<FirstStepWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Fecha de Cumpleaños',
+                            'Fecha de Nacimiento',
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           Text(
@@ -225,7 +225,7 @@ class _FirstStepWidgetState extends State<FirstStepWidget> {
                                     FFLocalizations.of(context).languageCode,
                               ),
                               'Date',
-                            ).maybeHandleOverflow(maxChars: 10),
+                            ).maybeHandleOverflow(maxChars: 20),
                             maxLines: 1,
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),

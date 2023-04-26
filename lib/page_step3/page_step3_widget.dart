@@ -51,64 +51,66 @@ class _PageStep3WidgetState extends State<PageStep3Widget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
-              child: Container(
-                width: double.infinity,
-                height: 200.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional(-0.4, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                        child: Text(
-                          'Listos para vivir la\nexperiencia?',
-                          style:
-                              FlutterFlowTheme.of(context).titleMedium.override(
-                                    fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                      ),
-                      Text(
-                        'Ingresa tu información a continuación o\ninicia sesión por tu cuenta',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                      ),
-                    ],
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                child: Container(
+                  width: double.infinity,
+                  height: 180.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                   ),
-                ),
-              ),
-            ),
-            Container(
-              height: 350.0,
-              decoration: BoxDecoration(),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: wrapWithModel(
-                      model: _model.thirdStepModel,
-                      updateCallback: () => setState(() {}),
-                      child: ThirdStepWidget(),
+                  child: Align(
+                    alignment: AlignmentDirectional(-0.4, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          child: Text(
+                            'Listos para vivir la\nexperiencia?',
+                            style:
+                                FlutterFlowTheme.of(context).titleMedium.override(
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
+                        ),
+                        Text(
+                          'Ingresa tu información a continuación o\ninicia sesión por tu cuenta',
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                      ],
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+              Container(
+                height: 350.0,
+                decoration: BoxDecoration(),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: wrapWithModel(
+                        model: _model.thirdStepModel,
+                        updateCallback: () => setState(() {}),
+                        child: ThirdStepWidget(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

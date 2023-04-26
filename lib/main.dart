@@ -30,6 +30,7 @@ class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
+
   static _MyAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>()!;
 }

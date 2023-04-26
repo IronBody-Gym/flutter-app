@@ -63,7 +63,7 @@ class _MachineDescriptionWidgetState extends State<MachineDescriptionWidget> {
                     scrollDirection: Axis.horizontal,
                     children: [
                       Image.network(
-                        'https://s3-alpha-sig.figma.com/img/d103/b3b8/2cb85d372636727a1fd1a6d05c4015f3?Expires=1681689600&Signature=LOaOoquJ4LqQP0Pgtq5BrGovH3zJBswqVgbMRVEVmmENRDMWuRw~XJFNW~oW8b2bJaLMSpwd1I~YAOIQ5eSXYaoan24bm6L2zOXKS2HOrGzx2yJ6NM3WOj9TiDr8G1XLHo-dXgjv~DLs2Rp~CDkyGKSBNZy4MZpAnG4etjeNaTDgL0NoH0-5367LNuaMOXwdlfeDYrlz2777A9D7DzyBwLD409rVM7BH0trZrAPUKvdAuWaGw~CWVdGDj9j84o4laPSNZ0jf~82rWFCHPDd0mYNJr-pzfI3h91xXRsq1tKIOtijigNODra9rvMfJ~0wy5OiRPnuWDmikea-ubY3MWQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                        'https://i.imgur.com/RevolAB.jpeg',
                         width: 100.0,
                         height: 177.0,
                         fit: BoxFit.cover,

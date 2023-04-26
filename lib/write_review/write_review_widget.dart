@@ -46,159 +46,182 @@ class _WriteReviewWidgetState extends State<WriteReviewWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 45.0, 20.0, 0.0),
-              child: Container(
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 20.0, 25.0),
+                child: Container(
+                  width: double.infinity,
+                  height: 210.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primaryBackground,
+                  ),
+                  child: Align(
+                    alignment: AlignmentDirectional(-0.4, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 34.0,
+                              height: 34.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                shape: BoxShape.circle,
+                              ),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('TrainerDetail');
+                                },
+                                child: Icon(
+                                  Icons.keyboard_arrow_left,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 24.0,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 15.0, 15.0, 15.0),
+                              child: Text(
+                                'Escribe tu reseña',
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 28.0,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              15.0, 20.0, 15.0, 25.0),
+                          child: Text(
+                            'Califica a tu entrenador siendo cinco estrellas la calificación más alta y una estrella la más baja. ',
+                            style: FlutterFlowTheme.of(context).bodyMedium,
+                          ),
+                        ),
+
+                        RatingBar.builder(
+                          onRatingUpdate: (newValue) =>
+                              setState(() => _model.ratingBarValue = newValue),
+                          itemBuilder: (context, index) => Icon(
+                            Icons.star_rounded,
+                            color: FlutterFlowTheme.of(context).primary,
+                          ),
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          initialRating: _model.ratingBarValue ??= 3.5,
+                          unratedColor: FlutterFlowTheme.of(context).accent2,
+                          itemCount: 5,
+                          itemSize: 40.0,
+                          glowColor: FlutterFlowTheme.of(context).primary,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+                child: Container(
+                  width: double.infinity,
+                  height: 200.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                    child: TextFormField(
+                      controller: _model.textController,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        hintText: 'Escribe tu reseña...',
+                        hintStyle: FlutterFlowTheme.of(context)
+                            .bodySmall
+                            .override(
+                              fontFamily: 'Roboto',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              lineHeight: 1.1,
+                            ),
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        focusedErrorBorder: InputBorder.none,
+                        filled: true,
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      maxLines: null,
+                      validator:
+                          _model.textControllerValidator.asValidator(context),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
                 width: double.infinity,
-                height: 122.4,
+                height: 101.2,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
                 ),
-                child: Align(
-                  alignment: AlignmentDirectional(-0.4, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: 34.0,
-                            height: 34.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              shape: BoxShape.circle,
-                            ),
-                            child: InkWell(
-                              onTap: () async {
-                                context.pushNamed('TrainerDetail');
-                              },
-                              child: Icon(
-                                Icons.keyboard_arrow_left,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 24.0,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                15.0, 15.0, 15.0, 15.0),
-                            child: Text(
-                              'Escribe tu reseña',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineMedium
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 28.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      RatingBar.builder(
-                        onRatingUpdate: (newValue) =>
-                            setState(() => _model.ratingBarValue = newValue),
-                        itemBuilder: (context, index) => Icon(
-                          Icons.star_rounded,
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                        direction: Axis.horizontal,
-                        initialRating: _model.ratingBarValue ??= 4.0,
-                        unratedColor: FlutterFlowTheme.of(context).accent2,
-                        itemCount: 5,
-                        itemSize: 40.0,
-                        glowColor: FlutterFlowTheme.of(context).primary,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
-              child: Container(
-                width: double.infinity,
-                height: 239.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
+                alignment: AlignmentDirectional(0.0, -0.30000000000000004),
                 child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
-                  child: TextFormField(
-                    controller: _model.textController,
-                    autofocus: true,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      hintText: 'Escribe tu reseña...',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).bodySmall.override(
-                                fontFamily: 'Roboto',
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                lineHeight: 1.1,
-                              ),
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      focusedErrorBorder: InputBorder.none,
-                      filled: true,
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  child: FFButtonWidget(
+                    onPressed: () {
+                      print('Button pressed ...');
+                    },
+                    text: 'Enviar',
+                    options: FFButtonOptions(
+                      width: 270.0,
+                      height: 50.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .override(
+                            fontFamily: 'Roboto',
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
-                    style: FlutterFlowTheme.of(context).bodyMedium,
-                    maxLines: null,
-                    validator:
-                        _model.textControllerValidator.asValidator(context),
                   ),
                 ),
               ),
-            ),
-            Container(
-              width: double.infinity,
-              height: 101.2,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).primaryBackground,
-              ),
-              alignment: AlignmentDirectional(0.0, -0.30000000000000004),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: 'Enviar',
-                  options: FFButtonOptions(
-                    width: 270.0,
-                    height: 50.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context)
-                        .headlineMedium
-                        .override(
-                          fontFamily: 'Roboto',
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.w500,
-                        ),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(50.0),
-                  ),
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

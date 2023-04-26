@@ -38,8 +38,8 @@ class _Home1WidgetState extends State<Home1Widget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 1.0,
-          end: 1.0,
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -51,8 +51,8 @@ class _Home1WidgetState extends State<Home1Widget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 1.0,
-          end: 1.0,
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -120,6 +120,10 @@ class _Home1WidgetState extends State<Home1Widget>
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
                         onTap: () async {
                           if (scaffoldKey.currentState!.isDrawerOpen ||
                               scaffoldKey.currentState!.isEndDrawerOpen) {
@@ -292,31 +296,41 @@ class _Home1WidgetState extends State<Home1Widget>
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                  child: ListTile(
-                    leading: Icon(
-                      FFIcons.kpower,
-                      color: FlutterFlowTheme.of(context).primary,
-                      size: 16.0,
+                  
+                  child: InkWell(
+                    onTap: () async {
+                      context.pushNamed('StoryWorkout');
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        FFIcons.kpower,
+                        color: FlutterFlowTheme.of(context).primary,
+                        size: 16.0,
+                      ),
+                      title: Text(
+                        'Historial',
+                        textAlign: TextAlign.start,
+                        style:
+                            FlutterFlowTheme.of(context).headlineSmall.override(
+                                  fontFamily: 'Roboto',
+                                  fontSize: 16.0,
+                                ),
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios,
+                        color: FlutterFlowTheme.of(context).accent2,
+                        size: 16.0,
+                      ),
+                      tileColor: FlutterFlowTheme.of(context).secondaryBackground,
+                      dense: false,
                     ),
-                    title: Text(
-                      'Historial',
-                      textAlign: TextAlign.start,
-                      style:
-                          FlutterFlowTheme.of(context).headlineSmall.override(
-                                fontFamily: 'Roboto',
-                                fontSize: 16.0,
-                              ),
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: FlutterFlowTheme.of(context).accent2,
-                      size: 16.0,
-                    ),
-                    tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-                    dense: false,
                   ),
                 ),
                 InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () async {
                     context.pushNamed('RecoveryPass');
                   },
@@ -345,6 +359,10 @@ class _Home1WidgetState extends State<Home1Widget>
                   ),
                 ),
                 InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () async {
                     GoRouter.of(context).prepareAuthEvent();
                     await authManager.signOut();
@@ -399,6 +417,10 @@ class _Home1WidgetState extends State<Home1Widget>
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
                             onTap: () async {
                               scaffoldKey.currentState!.openDrawer();
                             },
@@ -488,6 +510,10 @@ class _Home1WidgetState extends State<Home1Widget>
                             ),
                           ),
                           InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
                             onTap: () async {
                               scaffoldKey.currentState!.openDrawer();
                             },
@@ -564,6 +590,10 @@ class _Home1WidgetState extends State<Home1Widget>
                       padding: EdgeInsetsDirectional.fromSTEB(
                           16.0, 15.0, 16.0, 25.0),
                       child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
                         onTap: () async {
                           context.pushNamed('DailyWorkout');
                         },
@@ -692,27 +722,31 @@ class _Home1WidgetState extends State<Home1Widget>
                         initialIndex: 0,
                         child: Column(
                           children: [
-                            TabBar(
-                              isScrollable: true,
-                              labelColor: FlutterFlowTheme.of(context).primary,
-                              unselectedLabelColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              indicatorColor:
-                                  FlutterFlowTheme.of(context).primary,
-                              indicatorWeight: 2.0,
-                              tabs: [
-                                Tab(
-                                  text: 'Principiante',
-                                ),
-                                Tab(
-                                  text: 'Intermedio',
-                                ),
-                                Tab(
-                                  text: 'Avanzado',
-                                ),
-                              ],
+                            Align(
+                              alignment: Alignment(0.0, 0),
+                              child: TabBar(
+                                isScrollable: true,
+                                labelColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                unselectedLabelColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                labelStyle:
+                                    FlutterFlowTheme.of(context).bodyMedium,
+                                indicatorColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                indicatorWeight: 2.0,
+                                tabs: [
+                                  Tab(
+                                    text: 'Principiante',
+                                  ),
+                                  Tab(
+                                    text: 'Intermedio',
+                                  ),
+                                  Tab(
+                                    text: 'Avanzado',
+                                  ),
+                                ],
+                              ),
                             ),
                             Expanded(
                               child: TabBarView(
@@ -731,6 +765,10 @@ class _Home1WidgetState extends State<Home1Widget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 10.0),
                                           child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
                                                   'WorkoutCategories');
@@ -1196,6 +1234,10 @@ class _Home1WidgetState extends State<Home1Widget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 15.0, 0.0),
                               child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed('Instructors');
                                 },
@@ -1392,6 +1434,10 @@ class _Home1WidgetState extends State<Home1Widget>
                       padding: EdgeInsetsDirectional.fromSTEB(
                           16.0, 15.0, 16.0, 25.0),
                       child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
                         onTap: () async {
                           context.pushNamed('StoryWorkout');
                         },
@@ -1402,7 +1448,7 @@ class _Home1WidgetState extends State<Home1Widget>
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: Image.network(
-                                'https://s3-alpha-sig.figma.com/img/36cf/b6ce/479f2191de9ce3462a47819de7ef6636?Expires=1682294400&Signature=Zen49X8evMj4tHSDBqLv7mdWweaGovN8qWkbvjqifajIHcc5L5BDIgdLRE0NjEjFldXTWm2xEmeHSHQEveEqqXAD0DY8R99ZtkkcRuuBkea9T3JT-sGeC8kXLMjgCeDis63oZTBNhi5xyTzaZ4g~ZU24XY7vSk3jSGulz8XT~wkaqqitXb2u1JuuWDtPU6BjLh4JMCsl61VOl0QbqhopuVBIuqRahhJmcZ3iQDJFHkNWoAdkZbiXD3YmbjXeZ7nT5PZkFojx7P1yoeVjqYENnaxLYWuo4PpW5nRjmqttcVxXx0wTLIhTbjSE-er3TexqMNwdxJ-Mmx61nQy01OvD5w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                                'https://i.imgur.com/hb3KICr.png',
                               ).image,
                             ),
                             boxShadow: [

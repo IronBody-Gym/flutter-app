@@ -45,12 +45,12 @@ class _DailyWorkoutWidgetState extends State<DailyWorkoutWidget> {
       body: Align(
         alignment: AlignmentDirectional(0.0, -0.9),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               width: double.infinity,
-              height: 570.0,
+              height: 550,
               child: Stack(
                 children: [
                   Align(
@@ -223,23 +223,18 @@ class _DailyWorkoutWidgetState extends State<DailyWorkoutWidget> {
                                       .primaryBackground,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 10.0, 30.0, 0.0),
-                                      child: Text(
-                                        'Quiere que su cuerpo esté sano. Únete a nuestro programa con indicaciones según los objetivos del cuerpo. El aumento de la fuerza física es el objetivo del entrenamiento de fuerza. Mantenga la forma física del cuerpo haciendo ejercicio físico al menos 2-3 veces por semana.',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .override(
-                                              fontFamily: 'Roboto',
-                                              lineHeight: 1.5,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 10.0, 30.0, 0.0),
+                                  child: Text(
+                                    'Quiere que su cuerpo esté sano. Únete a nuestro programa con indicaciones según los objetivos del cuerpo. El aumento de la fuerza física es el objetivo del entrenamiento de fuerza. Mantenga la forma física del cuerpo haciendo ejercicio físico al menos 2-3 veces por semana.',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          lineHeight: 1.5,
+                                        ),
+                                  ),
                                 ),
                               ),
                             ),

@@ -222,7 +222,7 @@ class _ThirdStepWidgetState extends State<ThirdStepWidget> {
                     _model.passW2ControllerValidator.asValidator(context),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,

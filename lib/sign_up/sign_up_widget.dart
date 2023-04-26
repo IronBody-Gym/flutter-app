@@ -26,6 +26,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
   late SignUpModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   final animationsMap = {
     'buttonOnActionTriggerAnimation': AnimationInfo(
@@ -60,6 +61,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
   void dispose() {
     _model.dispose();
 
+    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -67,173 +69,184 @@ class _SignUpWidgetState extends State<SignUpWidget>
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Container(
-            width: double.infinity,
-            height: 460.0,
-            decoration: BoxDecoration(
-              color: Color(0x89000000),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: CachedNetworkImageProvider(
-                  'https://i.imgur.com/jSzv4JV.png',
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                width: double.infinity,
+                height: 460.0,
+                decoration: BoxDecoration(
+                  color: Color(0x89000000),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: CachedNetworkImageProvider(
+                      'https://i.imgur.com/jSzv4JV.png',
+                    ),
+                  ),
+                ),
+                child: Container(
+                  width: 100.0,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    color: Color(0x99000000),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            30.0, 50.0, 30.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('Login2');
+                              },
+                              child: Text(
+                                'Iniciar',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context).bodySmall,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  25.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'Regístrate',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodySmall
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            25.0, 0.0, 50.0, 45.0),
+                        child: Text(
+                          'Bienvenido, inicia\ncon nosotros',
+                          style: FlutterFlowTheme.of(context).displaySmall,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            child: Container(
-              width: 100.0,
-              height: 100.0,
-              decoration: BoxDecoration(
-                color: Color(0x99000000),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 30.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('Login2');
-                          },
-                          child: Text(
-                            'Iniciar',
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context).bodySmall,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              25.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            'Regístrate',
-                            style: FlutterFlowTheme.of(context)
-                                .bodySmall
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  color: FlutterFlowTheme.of(context).primary,
+              Container(
+                width: double.infinity,
+                height: 350.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      wrapWithModel(
+                        model: _model.firstStepModel,
+                        updateCallback: () => setState(() {}),
+                        child: FirstStepWidget(),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 20.0, 25.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 60.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 50.0,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                icon: FaIcon(
+                                  FontAwesomeIcons.google,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 24.0,
                                 ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 50.0, 45.0),
-                    child: Text(
-                      'Bienvenido, inicia\ncon nosotros',
-                      style: FlutterFlowTheme.of(context).displaySmall,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            height: 350.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primaryBackground,
-            ),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  wrapWithModel(
-                    model: _model.firstStepModel,
-                    updateCallback: () => setState(() {}),
-                    child: FirstStepWidget(),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 25.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 60.0, 0.0),
-                          child: FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            borderWidth: 1.0,
-                            buttonSize: 50.0,
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            icon: FaIcon(
-                              FontAwesomeIcons.google,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24.0,
+                                onPressed: () {
+                                  print('IconButton pressed ...');
+                                },
+                              ),
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
-                          ),
-                        ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed(
-                              'pageStep2',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.rightToLeft,
-                                  duration: Duration(milliseconds: 400),
-                                ),
+                            FFButtonWidget(
+                              onPressed: () async {
+                                context.pushNamed(
+                                  'pageStep2',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.rightToLeft,
+                                      duration: Duration(milliseconds: 400),
+                                    ),
+                                  },
+                                );
                               },
-                            );
-                          },
-                          text: 'Siguiente',
-                          icon: Icon(
-                            Icons.arrow_right_sharp,
-                            size: 15.0,
-                          ),
-                          options: FFButtonOptions(
-                            width: 128.0,
-                            height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBtnText,
+                              text: 'Siguiente',
+                              icon: Icon(
+                                Icons.arrow_right_sharp,
+                                size: 15.0,
+                              ),
+                              options: FFButtonOptions(
+                                width: 128.0,
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                    ),
+                                elevation: 2.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
                                 ),
-                            elevation: 2.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
+                                borderRadius: BorderRadius.circular(48.0),
+                              ),
+                            ).animateOnActionTrigger(
+                              animationsMap['buttonOnActionTriggerAnimation']!,
                             ),
-                            borderRadius: BorderRadius.circular(48.0),
-                          ),
-                        ).animateOnActionTrigger(
-                          animationsMap['buttonOnActionTriggerAnimation']!,
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

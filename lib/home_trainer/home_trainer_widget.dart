@@ -1,11 +1,15 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/back_button_widget.dart';
 import '/components/nav_bar_gym_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_trainer_model.dart';
@@ -26,7 +30,7 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
   final _unfocusNode = FocusNode();
 
   final animationsMap = {
-    'containerOnActionTriggerAnimation': AnimationInfo(
+    'containerOnActionTriggerAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onActionTrigger,
       applyInitialState: true,
       effects: [
@@ -34,8 +38,21 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 1.0,
-          end: 1.0,
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+    'containerOnActionTriggerAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 600.ms,
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -55,6 +72,9 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
 
     SchedulerBinding.instance.addPostFrameCallback((_) {
       animationsMap['containerOnPageLoadAnimation1']!
+          .controller
+          .forward(from: 0.0);
+      animationsMap['containerOnPageLoadAnimation6']!
           .controller
           .forward(from: 0.0);
     });
@@ -77,6 +97,301 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        drawer: Drawer(
+          elevation: 16.0,
+          child: Container(
+            width: 100.0,
+            height: 100.0,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).secondaryBackground,
+              borderRadius: BorderRadius.circular(0.0),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          if (scaffoldKey.currentState!.isDrawerOpen ||
+                              scaffoldKey.currentState!.isEndDrawerOpen) {
+                            Navigator.pop(context);
+                          }
+                        },
+                        child: wrapWithModel(
+                          model: _model.backButtonModel,
+                          updateCallback: () => setState(() {}),
+                          child: BackButtonWidget(),
+                        ),
+                      ),
+                      Text(
+                        'Mi Usuario',
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                      Icon(
+                        Icons.settings,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 24.0,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 120.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Stack(
+                        alignment: AlignmentDirectional(1.0, 0.0),
+                        children: [
+                          Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: FlutterFlowTheme.of(context).primary,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(110.0),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  2.0, 2.0, 2.0, 2.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(40.0),
+                                child: Image.network(
+                                  'https://i.imgur.com/SOF2TzU.png',
+                                  width: 100.0,
+                                  height: 100.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 1.0),
+                            child: Container(
+                              width: 30.0,
+                              height: 30.0,
+                              decoration: BoxDecoration(),
+                              child: Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: FlutterFlowIconButton(
+                                  borderRadius: 30.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 30.0,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  icon: Icon(
+                                    Icons.camera_alt_outlined,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 16.0,
+                                  ),
+                                  onPressed: () {
+                                    print('IconButton pressed ...');
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 0.0),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                currentUserDisplayName,
+                                style: FlutterFlowTheme.of(context).bodyMedium,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 0.0),
+                            child: Text(
+                              currentUserEmail,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Roboto',
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                            ),
+                          ),
+                          Align(
+                            alignment: AlignmentDirectional(0.0, -0.35),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 15.0, 0.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'Perfil',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.scale,
+                                        alignment: Alignment.bottomCenter,
+                                        duration: Duration(milliseconds: 300),
+                                      ),
+                                    },
+                                  );
+                                },
+                                text: 'Editar Usuario',
+                                icon: FaIcon(
+                                  FontAwesomeIcons.edit,
+                                  size: 16.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 130.0,
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Roboto',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                  child: ListTile(
+                    leading: Icon(
+                      FFIcons.kpower,
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 16.0,
+                    ),
+                    title: Text(
+                      'Historial',
+                      textAlign: TextAlign.start,
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: 'Roboto',
+                                fontSize: 16.0,
+                              ),
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: FlutterFlowTheme.of(context).accent2,
+                      size: 16.0,
+                    ),
+                    tileColor: FlutterFlowTheme.of(context).secondaryBackground,
+                    dense: false,
+                  ),
+                ),
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('RecoveryPass');
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.vpn_key_sharp,
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 16.0,
+                    ),
+                    title: Text(
+                      'Cambiar Contraseña',
+                      textAlign: TextAlign.start,
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: 'Roboto',
+                                fontSize: 16.0,
+                              ),
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: FlutterFlowTheme.of(context).accent2,
+                      size: 16.0,
+                    ),
+                    tileColor: FlutterFlowTheme.of(context).secondaryBackground,
+                    dense: false,
+                  ),
+                ),
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+
+                    context.goNamedAuth('Login2', mounted);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.login,
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 16.0,
+                    ),
+                    title: Text(
+                      'Salir',
+                      textAlign: TextAlign.start,
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: 'Roboto',
+                                fontSize: 16.0,
+                              ),
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: FlutterFlowTheme.of(context).accent2,
+                      size: 16.0,
+                    ),
+                    tileColor: FlutterFlowTheme.of(context).secondaryBackground,
+                    dense: false,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
         body: Stack(
           alignment: AlignmentDirectional(0.0, 1.0),
           children: [
@@ -93,25 +408,20 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                           16.0, 44.0, 16.0, 12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Card(
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            color: FlutterFlowTheme.of(context).primary,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  2.0, 2.0, 2.0, 2.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(40.0),
-                                child: Image.network(
-                                  'https://i.imgur.com/SOF2TzU.png',
-                                  width: 40.0,
-                                  height: 40.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              scaffoldKey.currentState!.openDrawer();
+                            },
+                            child: Icon(
+                              Icons.menu,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 32.0,
                             ),
                           ),
                           Padding(
@@ -130,7 +440,7 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Roboto',
-                                            fontSize: 26.0,
+                                            fontSize: 24.0,
                                             fontWeight: FontWeight.w900,
                                           ),
                                     ),
@@ -138,7 +448,11 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                                       builder: (context) => Text(
                                         currentUserDisplayName,
                                         style: FlutterFlowTheme.of(context)
-                                            .titleMedium,
+                                            .titleMedium
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              fontSize: 24.0,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -187,6 +501,35 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                                   ],
                                 ),
                               ],
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              scaffoldKey.currentState!.openDrawer();
+                            },
+                            child: Card(
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              color: FlutterFlowTheme.of(context).primary,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    2.0, 2.0, 2.0, 2.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(40.0),
+                                  child: Image.network(
+                                    'https://i.imgur.com/SOF2TzU.png',
+                                    width: 40.0,
+                                    height: 40.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -241,6 +584,10 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                       padding: EdgeInsetsDirectional.fromSTEB(
                           16.0, 15.0, 16.0, 25.0),
                       child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
                         onTap: () async {
                           context.pushNamed('DailyWorkout');
                         },
@@ -311,7 +658,7 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                           ),
                         ),
                       ).animateOnActionTrigger(
-                        animationsMap['containerOnActionTriggerAnimation']!,
+                        animationsMap['containerOnActionTriggerAnimation1']!,
                       ),
                     ),
                     Padding(
@@ -369,27 +716,31 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                         initialIndex: 0,
                         child: Column(
                           children: [
-                            TabBar(
-                              isScrollable: true,
-                              labelColor: FlutterFlowTheme.of(context).primary,
-                              unselectedLabelColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              indicatorColor:
-                                  FlutterFlowTheme.of(context).primary,
-                              indicatorWeight: 2.0,
-                              tabs: [
-                                Tab(
-                                  text: 'Principiante',
-                                ),
-                                Tab(
-                                  text: 'Intermedio',
-                                ),
-                                Tab(
-                                  text: 'Avanzado',
-                                ),
-                              ],
+                            Align(
+                              alignment: Alignment(0.0, 0),
+                              child: TabBar(
+                                isScrollable: true,
+                                labelColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                unselectedLabelColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                labelStyle:
+                                    FlutterFlowTheme.of(context).bodyMedium,
+                                indicatorColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                indicatorWeight: 2.0,
+                                tabs: [
+                                  Tab(
+                                    text: 'Principiante',
+                                  ),
+                                  Tab(
+                                    text: 'Intermedio',
+                                  ),
+                                  Tab(
+                                    text: 'Avanzado',
+                                  ),
+                                ],
+                              ),
                             ),
                             Expanded(
                               child: TabBarView(
@@ -408,6 +759,10 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 10.0),
                                           child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
                                                   'WorkoutCategories');
@@ -862,7 +1217,7 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 0.0, 15.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -873,6 +1228,10 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 15.0, 0.0),
                               child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed('Instructors');
                                 },
@@ -1053,9 +1412,86 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
                         ),
                       ),
                     ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(18.0, 12.0, 0.0, 0.0),
+                      child: Text(
+                        'Historial',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Roboto',
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          16.0, 15.0, 16.0, 25.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('StoryWorkout');
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 160.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.network(
+                                'https://s3-alpha-sig.figma.com/img/36cf/b6ce/479f2191de9ce3462a47819de7ef6636?Expires=1682294400&Signature=Zen49X8evMj4tHSDBqLv7mdWweaGovN8qWkbvjqifajIHcc5L5BDIgdLRE0NjEjFldXTWm2xEmeHSHQEveEqqXAD0DY8R99ZtkkcRuuBkea9T3JT-sGeC8kXLMjgCeDis63oZTBNhi5xyTzaZ4g~ZU24XY7vSk3jSGulz8XT~wkaqqitXb2u1JuuWDtPU6BjLh4JMCsl61VOl0QbqhopuVBIuqRahhJmcZ3iQDJFHkNWoAdkZbiXD3YmbjXeZ7nT5PZkFojx7P1yoeVjqYENnaxLYWuo4PpW5nRjmqttcVxXx0wTLIhTbjSE-er3TexqMNwdxJ-Mmx61nQy01OvD5w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                              ).image,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 5.0,
+                                color: Color(0x23000000),
+                                offset: Offset(0.0, 2.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 16.0, 16.0, 16.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Mira tus avances',
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color: Colors.white,
+                                              fontSize: 17.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ).animateOnActionTrigger(
+                        animationsMap['containerOnActionTriggerAnimation2']!,
+                      ),
+                    ),
                     Container(
                       width: double.infinity,
-                      height: 130.0,
+                      height: 90.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
@@ -1065,7 +1501,7 @@ class _HomeTrainerWidgetState extends State<HomeTrainerWidget>
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.01),
               child: wrapWithModel(
                 model: _model.navBarGymModel,
                 updateCallback: () => setState(() {}),

@@ -7,8 +7,8 @@ export '/perfil/perfil_widget.dart' show PerfilWidget;
 export '/workouts/workouts_widget.dart' show WorkoutsWidget;
 export '/home1/home1_widget.dart' show Home1Widget;
 export '/gym_events/gym_events_widget.dart' show GymEventsWidget;
-export '/daily_workout/daily_workout_widget.dart' show DailyWorkoutWidget;
 export '/navbar/navbar_widget.dart' show NavbarWidget;
+export '/daily_workout/daily_workout_widget.dart' show DailyWorkoutWidget;
 export '/workout_categories/workout_categories_widget.dart'
     show WorkoutCategoriesWidget;
 export '/instructors/instructors_widget.dart' show InstructorsWidget;
@@ -19,7 +19,6 @@ export '/machine_description/machine_description_widget.dart'
 export '/trainer_detail/trainer_detail_widget.dart' show TrainerDetailWidget;
 export '/write_review/write_review_widget.dart' show WriteReviewWidget;
 export '/event/event_widget.dart' show EventWidget;
-export '/home_trainer/home_trainer_widget.dart' show HomeTrainerWidget;
 export '/createtrainer/createtrainer_widget.dart' show CreatetrainerWidget;
 export '/customer_list/customer_list_widget.dart' show CustomerListWidget;
 export '/recovery_pass/recovery_pass_widget.dart' show RecoveryPassWidget;
@@ -33,3 +32,4 @@ export '/botonesdinamicos/botonesdinamicos_widget.dart'
 export '/create_guide/create_guide_widget.dart' show CreateGuideWidget;
 export '/login2/login2_widget.dart' show Login2Widget;
 export '/story_workout/story_workout_widget.dart' show StoryWorkoutWidget;
+export '/home_trainer/home_trainer_widget.dart' show HomeTrainerWidget;

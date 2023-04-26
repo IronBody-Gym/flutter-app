@@ -2,8 +2,8 @@ import '/components/cookie_machine_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/flutter_flow_youtube_player.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -56,7 +56,7 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
 
     return Container(
       width: double.infinity,
-      height: 850.0,
+      height: 850,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
         borderRadius: BorderRadius.only(
@@ -69,7 +69,7 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
       ),
       child: Container(
         width: double.infinity,
-        height: 550.0,
+        height: double.infinity,
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
           child: PageView(
@@ -88,8 +88,12 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                       Align(
                         alignment: AlignmentDirectional(-0.8, 0.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Home1');
+                            context.pushNamed('DailyWorkout');
                           },
                           child: Container(
                             width: 28.0,
@@ -138,8 +142,7 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                         width: 327.0,
                         height: 86.0,
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).secondaryBackground,
                           borderRadius: BorderRadius.circular(16.0),
                         ),
                         child: Row(
@@ -178,8 +181,12 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                   AutoSizeText(
                                     'Series',
                                     textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 11.0,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -201,44 +208,39 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                               ),
                               child: Align(
                                 alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 4.0),
-                                        child: Text(
-                                          '10',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Roboto',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 22.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 4.0),
+                                      child: Text(
+                                        '10',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              color: FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                      Expanded(
-                                        child: AutoSizeText(
-                                          'Repetición',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    AutoSizeText(
+                                      'Repetición',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11.0,
+                                          ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -260,40 +262,38 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 4.0),
-                                        child: Text(
-                                          '25\"',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Roboto',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 22.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                      ),
-                                      AutoSizeText(
-                                        'Descanso',
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 4.0),
+                                      child: Text(
+                                        '25\"',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodySmall,
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              color: FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    AutoSizeText(
+                                      'Descanso',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11.0,
+                                          ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -302,18 +302,19 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                        child: FlutterFlowYoutubePlayer(
-                          url: 'https://youtu.be/49JtFEYgXf4',
-                          autoPlay: false,
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        child: FlutterFlowVideoPlayer(
+                          path: 'assets/videos/file.mp4',
+                          videoType: VideoType.asset,
+                          autoPlay: true,
                           looping: true,
-                          mute: false,
                           showControls: false,
-                          showFullScreen: false,
+                          allowFullScreen: true,
+                          allowPlaybackSpeedMenu: false,
                         ),
                       ),
                       SingleChildScrollView(
-                        primary: false,
+                        primary: true,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -323,8 +324,7 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                   20.0, 16.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Día 01 - Calentamiento',
@@ -362,37 +362,34 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                               BorderRadius.circular(30.0),
                                         ),
                                         child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 8.0, 0.0),
+                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                              8.0, 0.0, 8.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
                                               FaIcon(
-                                                FontAwesomeIcons
-                                                    .solidPlayCircle,
+                                                FontAwesomeIcons.solidPlayCircle,
                                                 color: Colors.white,
                                                 size: 15.0,
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '60 min',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: Colors.white,
-                                                        fontSize: 13.0,
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Lexend Deca',
+                                                            color: Colors.white,
+                                                            fontSize: 11.0,
+                                                            fontWeight:
+                                                                FontWeight.w300,
+                                                          ),
                                                 ),
                                               ),
                                             ],
@@ -432,10 +429,13 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed('MachineDescription');
                                     },
@@ -537,8 +537,12 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                       Align(
                         alignment: AlignmentDirectional(-0.8, 0.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Home1');
+                            context.pushNamed('DailyWorkout');
                           },
                           child: Container(
                             width: 28.0,
@@ -587,8 +591,7 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                         width: 327.0,
                         height: 86.0,
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).secondaryBackground,
                           borderRadius: BorderRadius.circular(16.0),
                         ),
                         child: Row(
@@ -624,11 +627,15 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                           ),
                                     ),
                                   ),
-                                  Text(
+                                  AutoSizeText(
                                     'Series',
                                     textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 11.0,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -648,13 +655,12 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                     .secondaryBackground,
                                 borderRadius: BorderRadius.circular(16.0),
                               ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 12.0, 12.0, 12.0),
+                              child: Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -666,19 +672,22 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                             .displaySmall
                                             .override(
                                               fontFamily: 'Roboto',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                              color: FlutterFlowTheme.of(context)
+                                                  .primaryText,
                                               fontSize: 22.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
                                     ),
-                                    Text(
+                                    AutoSizeText(
                                       'Repetición',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11.0,
+                                          ),
                                     ),
                                   ],
                                 ),
@@ -702,40 +711,38 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 4.0),
-                                        child: Text(
-                                          '25\"',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Roboto',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 22.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                      ),
-                                      Text(
-                                        'Descanso',
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 4.0),
+                                      child: Text(
+                                        '25\"',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodySmall,
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              color: FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    AutoSizeText(
+                                      'Descanso',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11.0,
+                                          ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -744,41 +751,19 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                        child: FlutterFlowYoutubePlayer(
-                          url: 'https://youtu.be/49JtFEYgXf4',
-                          autoPlay: false,
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        child: FlutterFlowVideoPlayer(
+                          path: 'assets/videos/file.mp4',
+                          videoType: VideoType.asset,
+                          autoPlay: true,
                           looping: true,
-                          mute: false,
                           showControls: false,
-                          showFullScreen: false,
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 1.0,
-                          decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 4.0,
-                                color: Color(0x5B000000),
-                                offset: Offset(0.0, -2.0),
-                              )
-                            ],
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(0.0),
-                              bottomRight: Radius.circular(0.0),
-                              topLeft: Radius.circular(24.0),
-                              topRight: Radius.circular(24.0),
-                            ),
-                          ),
+                          allowFullScreen: true,
+                          allowPlaybackSpeedMenu: false,
                         ),
                       ),
                       SingleChildScrollView(
-                        primary: false,
+                        primary: true,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -788,8 +773,7 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                   20.0, 16.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Día 01 - Calentamiento',
@@ -827,37 +811,34 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                               BorderRadius.circular(30.0),
                                         ),
                                         child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 8.0, 0.0),
+                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                              8.0, 0.0, 8.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
                                               FaIcon(
-                                                FontAwesomeIcons
-                                                    .solidPlayCircle,
+                                                FontAwesomeIcons.solidPlayCircle,
                                                 color: Colors.white,
                                                 size: 15.0,
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '60 min',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: Colors.white,
-                                                        fontSize: 13.0,
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Lexend Deca',
+                                                            color: Colors.white,
+                                                            fontSize: 11.0,
+                                                            fontWeight:
+                                                                FontWeight.w300,
+                                                          ),
                                                 ),
                                               ),
                                             ],
@@ -897,26 +878,29 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed('MachineDescription');
                                     },
                                     child: wrapWithModel(
-                                      model: _model.cookieMachineModel4,
+                                      model: _model.cookieMachineModel1,
                                       updateCallback: () => setState(() {}),
                                       child: CookieMachineWidget(),
                                     ),
                                   ),
                                   wrapWithModel(
-                                    model: _model.cookieMachineModel5,
+                                    model: _model.cookieMachineModel2,
                                     updateCallback: () => setState(() {}),
                                     child: CookieMachineWidget(),
                                   ),
                                   wrapWithModel(
-                                    model: _model.cookieMachineModel6,
+                                    model: _model.cookieMachineModel3,
                                     updateCallback: () => setState(() {}),
                                     child: CookieMachineWidget(),
                                   ),
@@ -933,23 +917,18 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                       .primaryBackground,
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 10.0, 15.0, 0.0),
-                                      child: Text(
-                                        'Quiere que su cuerpo esté sano. Únete a nuestro programa con indicaciones según los objetivos del cuerpo. El aumento de la fuerza física es el objetivo del entrenamiento de fuerza. Mantenga la forma física del cuerpo haciendo ejercicio físico al menos 2-3 veces por semana.',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .override(
-                                              fontFamily: 'Roboto',
-                                              lineHeight: 1.5,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 10.0, 15.0, 0.0),
+                                  child: Text(
+                                    'Quiere que su cuerpo esté sano. Únete a nuestro programa con indicaciones según los objetivos del cuerpo. El aumento de la fuerza física es el objetivo del entrenamiento de fuerza. Mantenga la forma física del cuerpo haciendo ejercicio físico al menos 2-3 veces por semana.',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          lineHeight: 1.5,
+                                        ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -1007,8 +986,12 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                       Align(
                         alignment: AlignmentDirectional(-0.8, 0.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Home1');
+                            context.pushNamed('DailyWorkout');
                           },
                           child: Container(
                             width: 28.0,
@@ -1057,8 +1040,7 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                         width: 327.0,
                         height: 86.0,
                         decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).secondaryBackground,
                           borderRadius: BorderRadius.circular(16.0),
                         ),
                         child: Row(
@@ -1094,11 +1076,15 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                           ),
                                     ),
                                   ),
-                                  Text(
+                                  AutoSizeText(
                                     'Series',
                                     textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 11.0,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -1118,13 +1104,12 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                     .secondaryBackground,
                                 borderRadius: BorderRadius.circular(16.0),
                               ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 12.0, 12.0, 12.0),
+                              child: Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -1136,9 +1121,8 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                             .displaySmall
                                             .override(
                                               fontFamily: 'Roboto',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                              color: FlutterFlowTheme.of(context)
+                                                  .primaryText,
                                               fontSize: 22.0,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -1148,7 +1132,11 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                       'Repetición',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11.0,
+                                          ),
                                     ),
                                   ],
                                 ),
@@ -1172,40 +1160,38 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 12.0, 12.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 4.0),
-                                        child: Text(
-                                          '25\"',
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Roboto',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 22.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                      ),
-                                      AutoSizeText(
-                                        'Descanso',
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 4.0),
+                                      child: Text(
+                                        '25\"',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodySmall,
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Roboto',
+                                              color: FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    AutoSizeText(
+                                      'Descanso',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 11.0,
+                                          ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -1214,18 +1200,19 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                        child: FlutterFlowYoutubePlayer(
-                          url: 'https://youtu.be/49JtFEYgXf4',
-                          autoPlay: false,
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        child: FlutterFlowVideoPlayer(
+                          path: 'assets/videos/file.mp4',
+                          videoType: VideoType.asset,
+                          autoPlay: true,
                           looping: true,
-                          mute: false,
                           showControls: false,
-                          showFullScreen: false,
+                          allowFullScreen: true,
+                          allowPlaybackSpeedMenu: false,
                         ),
                       ),
                       SingleChildScrollView(
-                        primary: false,
+                        primary: true,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1235,8 +1222,7 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                   20.0, 16.0, 20.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Día 01 - Calentamiento',
@@ -1274,37 +1260,34 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                               BorderRadius.circular(30.0),
                                         ),
                                         child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 8.0, 0.0),
+                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                              8.0, 0.0, 8.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
                                               FaIcon(
-                                                FontAwesomeIcons
-                                                    .solidPlayCircle,
+                                                FontAwesomeIcons.solidPlayCircle,
                                                 color: Colors.white,
                                                 size: 15.0,
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '60 min',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: Colors.white,
-                                                        fontSize: 13.0,
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Lexend Deca',
+                                                            color: Colors.white,
+                                                            fontSize: 11.0,
+                                                            fontWeight:
+                                                                FontWeight.w300,
+                                                          ),
                                                 ),
                                               ),
                                             ],
@@ -1344,26 +1327,29 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed('MachineDescription');
                                     },
                                     child: wrapWithModel(
-                                      model: _model.cookieMachineModel7,
+                                      model: _model.cookieMachineModel1,
                                       updateCallback: () => setState(() {}),
                                       child: CookieMachineWidget(),
                                     ),
                                   ),
                                   wrapWithModel(
-                                    model: _model.cookieMachineModel8,
+                                    model: _model.cookieMachineModel2,
                                     updateCallback: () => setState(() {}),
                                     child: CookieMachineWidget(),
                                   ),
                                   wrapWithModel(
-                                    model: _model.cookieMachineModel9,
+                                    model: _model.cookieMachineModel3,
                                     updateCallback: () => setState(() {}),
                                     child: CookieMachineWidget(),
                                   ),
@@ -1400,14 +1386,13 @@ class _WorkoutPageViewWidgetState extends State<WorkoutPageViewWidget>
                                   16.0, 15.0, 16.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  await _model.pageViewController
-                                      ?.animateToPage(
-                                    0,
-                                    duration: Duration(milliseconds: 500),
-                                    curve: Curves.ease,
-                                  );
+                                  await _model.pageViewController?.animateToPage(
+                                  0,
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.ease,
+                                );
                                 },
-                                text: 'Volver al inicio',
+                                text: 'Volver al Inicio',
                                 options: FFButtonOptions(
                                   width: 270.0,
                                   height: 50.0,

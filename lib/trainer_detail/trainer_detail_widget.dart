@@ -2,6 +2,7 @@ import '/components/back_button_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -52,9 +53,9 @@ class _TrainerDetailWidgetState extends State<TrainerDetailWidget> {
               color: FlutterFlowTheme.of(context).primaryBackground,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.network(
-                  'https://s3-alpha-sig.figma.com/img/e706/1f31/98f4255e72eb5641185a5ffbf5d83bc7?Expires=1681689600&Signature=GL2H~zfS9kvPfv~ygO-60AceI9m523xpYq1B6oY0-cEM3CHKS4YMveFpJDCYVAB87ZjjE6RED-lbsbWF1bPmlX4t9UXzIWX~ToXJC~m7AJBsetwVMv3qo2I0a55lQj0ciFcTMaA3Rr70IsNYwxPMP8Ofh7thswH~k2NB3CPPdqnP2R41wRLJoK4k~U7ChxSTz-cyBjlwcyh-D9Y5tPsr6m3oGdS8cMOewd4XyvaiVlhBQkcs2MY6FB8iDJ6Ym1VPS-xycEpMnvN8JU5Awnq81vwBKtuo2b9MBFU7b8AFgHf65iPr8W5hOaDsW9dPirC4BTPo4J9TUpnSEecbvVAEJg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
-                ).image,
+                image: CachedNetworkImageProvider(
+                  'https://s3-alpha-sig.figma.com/img/e706/1f31/98f4255e72eb5641185a5ffbf5d83bc7?Expires=1682899200&Signature=Bt7PhG1py4f06A91HlM42ycufaD3NCde6trhNGMB9Ga6KLZ10D5UFBzRJJGPolwWBRrBlYtptfNSagk-txj4GP4QN98wzGGFp1e27ptJpoIdbEWIAD41fYSQ6wq8ae0Hy8ryW66oQ8vKrbaE2~iHY9FUf0ipVua8MsUf2k6O7efmBvYCGa9DGf53J~OuBgo4DgnxI~qS1pLDaytb6nWy885iINqH6FtlscM~VJhKJuMIHE4f7Kur27zHX3MBaKZnOIP5frccrFNIkT5oFc1YJ3P~LLGefZUbqERGhCTLywsJ6s0RAuHaWjKf-y-fHJLSfO6BTmoAZHgOrgvuvEeF6g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                ),
               ),
             ),
             child: Align(
@@ -69,6 +70,10 @@ class _TrainerDetailWidgetState extends State<TrainerDetailWidget> {
                 child: Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed('Instructors');
                     },
@@ -289,7 +294,7 @@ class _TrainerDetailWidgetState extends State<TrainerDetailWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                              'https://s3-alpha-sig.figma.com/img/2897/6f7a/e058bf510bc1cd677037586cdd42b4ff?Expires=1681689600&Signature=mPvwoEx4w~fwMUNl8ziZ6-JVguctqC-NYjCxojpGNVangtOOSRZpdtmcwL6Qom~6Xy7GviHvDIhhDepot26ybbNduJgh4COq2y0jupxip5EX5WHFYXcEvWBRrKnouSq0YbhyHKh8q26i4TW4EYaX9BnWHugyLLfiChODuBtk9Cctt5Z79rf5sv5DJjZJDFa7r72Uy5y2cNRBnjQ-Rf00ztAslunnpujNX26zGqvoy4yZd7BwZRP9sm21euy-ZpQ~N~EaRSVykrPE02XpBjFyP1cgu08dQ2LqTGGwf9fBJQYmkV-L4lQXWeY~FelmsorejfYahC9SRYlh3YJLVsoOKg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                                              'https://s3-alpha-sig.figma.com/img/2897/6f7a/e058bf510bc1cd677037586cdd42b4ff?Expires=1682899200&Signature=UYAoH4G86WADLMN70RsRK6m~R7t9qdctTcal1j5MahYKvUu924bOOPQfy-Tg~RTs2VfhGjlAecgyy8jOIaXwvMMrcsaZGDCREWJUQxQqr2jxE7xwOsROhi6ycj8JlFKdWs-l36AJqnI3na81OhBW-jlNb8uUE5m9kAejpeRxB0yd~WHMFFGH8Z1Aw6pfhnSMkSkwg09ASh0vU2X0Gnf4iBSBuyI62ob~Hr3aP8-SjcB3li~6xVzX9LNFLPtncpwKpANnPRfWU8PABkpRq1Z1aw9BEMiBxME-hP63ckCruXwmzfuQXoXgkbmF5mn-ZHeBSCVNqQ-gsh6s8S02KmGr1w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -413,7 +418,7 @@ class _TrainerDetailWidgetState extends State<TrainerDetailWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                              'https://s3-alpha-sig.figma.com/img/2897/6f7a/e058bf510bc1cd677037586cdd42b4ff?Expires=1681689600&Signature=mPvwoEx4w~fwMUNl8ziZ6-JVguctqC-NYjCxojpGNVangtOOSRZpdtmcwL6Qom~6Xy7GviHvDIhhDepot26ybbNduJgh4COq2y0jupxip5EX5WHFYXcEvWBRrKnouSq0YbhyHKh8q26i4TW4EYaX9BnWHugyLLfiChODuBtk9Cctt5Z79rf5sv5DJjZJDFa7r72Uy5y2cNRBnjQ-Rf00ztAslunnpujNX26zGqvoy4yZd7BwZRP9sm21euy-ZpQ~N~EaRSVykrPE02XpBjFyP1cgu08dQ2LqTGGwf9fBJQYmkV-L4lQXWeY~FelmsorejfYahC9SRYlh3YJLVsoOKg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                                              'https://s3-alpha-sig.figma.com/img/2897/6f7a/e058bf510bc1cd677037586cdd42b4ff?Expires=1682899200&Signature=UYAoH4G86WADLMN70RsRK6m~R7t9qdctTcal1j5MahYKvUu924bOOPQfy-Tg~RTs2VfhGjlAecgyy8jOIaXwvMMrcsaZGDCREWJUQxQqr2jxE7xwOsROhi6ycj8JlFKdWs-l36AJqnI3na81OhBW-jlNb8uUE5m9kAejpeRxB0yd~WHMFFGH8Z1Aw6pfhnSMkSkwg09ASh0vU2X0Gnf4iBSBuyI62ob~Hr3aP8-SjcB3li~6xVzX9LNFLPtncpwKpANnPRfWU8PABkpRq1Z1aw9BEMiBxME-hP63ckCruXwmzfuQXoXgkbmF5mn-ZHeBSCVNqQ-gsh6s8S02KmGr1w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -537,7 +542,7 @@ class _TrainerDetailWidgetState extends State<TrainerDetailWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                              'https://s3-alpha-sig.figma.com/img/2897/6f7a/e058bf510bc1cd677037586cdd42b4ff?Expires=1681689600&Signature=mPvwoEx4w~fwMUNl8ziZ6-JVguctqC-NYjCxojpGNVangtOOSRZpdtmcwL6Qom~6Xy7GviHvDIhhDepot26ybbNduJgh4COq2y0jupxip5EX5WHFYXcEvWBRrKnouSq0YbhyHKh8q26i4TW4EYaX9BnWHugyLLfiChODuBtk9Cctt5Z79rf5sv5DJjZJDFa7r72Uy5y2cNRBnjQ-Rf00ztAslunnpujNX26zGqvoy4yZd7BwZRP9sm21euy-ZpQ~N~EaRSVykrPE02XpBjFyP1cgu08dQ2LqTGGwf9fBJQYmkV-L4lQXWeY~FelmsorejfYahC9SRYlh3YJLVsoOKg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                                              'https://s3-alpha-sig.figma.com/img/2897/6f7a/e058bf510bc1cd677037586cdd42b4ff?Expires=1682899200&Signature=UYAoH4G86WADLMN70RsRK6m~R7t9qdctTcal1j5MahYKvUu924bOOPQfy-Tg~RTs2VfhGjlAecgyy8jOIaXwvMMrcsaZGDCREWJUQxQqr2jxE7xwOsROhi6ycj8JlFKdWs-l36AJqnI3na81OhBW-jlNb8uUE5m9kAejpeRxB0yd~WHMFFGH8Z1Aw6pfhnSMkSkwg09ASh0vU2X0Gnf4iBSBuyI62ob~Hr3aP8-SjcB3li~6xVzX9LNFLPtncpwKpANnPRfWU8PABkpRq1Z1aw9BEMiBxME-hP63ckCruXwmzfuQXoXgkbmF5mn-ZHeBSCVNqQ-gsh6s8S02KmGr1w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -665,6 +670,17 @@ class _TrainerDetailWidgetState extends State<TrainerDetailWidget> {
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(50.0),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
                         ),
                       ),
                     ),

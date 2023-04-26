@@ -121,14 +121,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => GymEventsWidget(),
         ),
         FFRoute(
-          name: 'DailyWorkout',
-          path: '/dailyWorkout',
-          builder: (context, params) => DailyWorkoutWidget(),
-        ),
-        FFRoute(
           name: 'Navbar',
           path: '/navbar',
           builder: (context, params) => NavbarWidget(),
+        ),
+        FFRoute(
+          name: 'DailyWorkout',
+          path: '/dailyWorkout',
+          builder: (context, params) => DailyWorkoutWidget(),
         ),
         FFRoute(
           name: 'WorkoutCategories',
@@ -164,11 +164,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Event',
           path: '/event',
           builder: (context, params) => EventWidget(),
-        ),
-        FFRoute(
-          name: 'HomeTrainer',
-          path: '/homeTrainer',
-          builder: (context, params) => HomeTrainerWidget(),
         ),
         FFRoute(
           name: 'createtrainer',
@@ -219,6 +214,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'StoryWorkout',
           path: '/storyWorkout',
           builder: (context, params) => StoryWorkoutWidget(),
+        ),
+        FFRoute(
+          name: 'HomeTrainer',
+          path: '/homeTrainer',
+          builder: (context, params) => HomeTrainerWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

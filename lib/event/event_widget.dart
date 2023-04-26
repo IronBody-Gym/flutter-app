@@ -50,7 +50,7 @@ class _EventWidgetState extends State<EventWidget> {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: Image.network(
-                  'https://s3-alpha-sig.figma.com/img/ae3e/9a3a/4f079bdb9fb24b90a25cf9e1218c2c0f?Expires=1682294400&Signature=EAZw1YkLDu3xq2SPQ6FOesfpzHB5Xa4hZRFMDtjIWVRuNL3JyKy-ziSB34E2y836dIQGKXdhe6VeVs9LA4Lj2FVQZq4k2QklIGIhQjXKIybLOtkyClImYFR8DSqyLnb2y0dKSRCwP56~N4wlcUQetmnnTojLIr7gwmv-VTWo7gGIfm5vN2qfoD6StyRz~Z~0ZzBCrSfuL2LoBToVolw9uALL8WLo9V7VGuSTIXGbZjw3T7oriJho7fyxaHj8l7wiwLIK~bENtbRLyGQqgTKowGy5SvG9F5gOKFZ-l~8yLK2j16G3vze4YjSmdparoRErMuXJ5C9AwH5crjtHc9ESgQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+                  'https://i.imgur.com/zayL0IJ.jpeg',
                 ).image,
               ),
             ),
@@ -64,6 +64,10 @@ class _EventWidgetState extends State<EventWidget> {
                   shape: BoxShape.circle,
                 ),
                 child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () async {
                     context.pushNamed('gymEvents');
                   },
@@ -195,7 +199,7 @@ class _EventWidgetState extends State<EventWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 13.0,
+                                              fontSize: 11.0,
                                               fontWeight: FontWeight.w300,
                                             ),
                                       ),
@@ -245,7 +249,7 @@ class _EventWidgetState extends State<EventWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 13.0,
+                                              fontSize: 11.0,
                                               fontWeight: FontWeight.w300,
                                             ),
                                       ),
@@ -267,24 +271,24 @@ class _EventWidgetState extends State<EventWidget> {
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 15.0, 20.0, 0.0),
-                              child: Text(
-                                'La rumbaterapia, que trabaja tanto la mente como todas las zonas del cuerpo, ayuda a mejorar la condición física de cualquier individuo que decida practicarla. A su vez fortalece los músculos del cuerpo y la parte cardiovascular, libera el estrés, además de beneficiar la motricidad y la coordinación de las lateralidades.',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      fontFamily: 'Roboto',
-                                      lineHeight: 1.5,
-                                    ),
-                              ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 20.0, 0.0),
+                      child: Text(
+                        'La rumbaterapia, que trabaja tanto la mente como todas las zonas del cuerpo, ayuda a mejorar la condición física de cualquier individuo que decida practicarla. A su vez fortalece los músculos del cuerpo y la parte cardiovascular, libera el estrés, además de beneficiar la motricidad y la coordinación de las lateralidades.',
+                        style: FlutterFlowTheme.of(context).bodySmall.override(
+                              fontFamily: 'Roboto',
+                              lineHeight: 1.5,
                             ),
-                          ],
-                        ),
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 200.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                     ),
                   ],
