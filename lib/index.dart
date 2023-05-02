@@ -27,9 +27,10 @@ export '/create_workout_next/create_workout_next_widget.dart'
     show CreateWorkoutNextWidget;
 export '/create_workout_final/create_workout_final_widget.dart'
     show CreateWorkoutFinalWidget;
-export '/botonesdinamicos/botonesdinamicos_widget.dart'
-    show BotonesdinamicosWidget;
 export '/create_guide/create_guide_widget.dart' show CreateGuideWidget;
 export '/login2/login2_widget.dart' show Login2Widget;
 export '/story_workout/story_workout_widget.dart' show StoryWorkoutWidget;
 export '/home_trainer/home_trainer_widget.dart' show HomeTrainerWidget;
+export '/listade_ejercicios/listade_ejercicios_widget.dart'
+    show ListadeEjerciciosWidget;
+export '/splash/splash_widget.dart' show SplashWidget;

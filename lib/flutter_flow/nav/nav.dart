@@ -196,11 +196,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CreateWorkoutFinalWidget(),
         ),
         FFRoute(
-          name: 'botonesdinamicos',
-          path: '/botonesdinamicos',
-          builder: (context, params) => BotonesdinamicosWidget(),
-        ),
-        FFRoute(
           name: 'CreateGuide',
           path: '/createGuide',
           builder: (context, params) => CreateGuideWidget(),
@@ -219,6 +214,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'HomeTrainer',
           path: '/homeTrainer',
           builder: (context, params) => HomeTrainerWidget(),
+        ),
+        FFRoute(
+          name: 'ListadeEjercicios',
+          path: '/listadeEjercicios',
+          builder: (context, params) => ListadeEjerciciosWidget(),
+        ),
+        FFRoute(
+          name: 'splash',
+          path: '/splash',
+          builder: (context, params) => SplashWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
@@ -400,15 +405,7 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      color: FlutterFlowTheme.of(context).primary,
-                    ),
-                  ),
-                )
+              ? new SplashWidget()
               : page;
 
           final transitionInfo = state.transitionInfo;

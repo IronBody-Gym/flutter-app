@@ -22,7 +22,8 @@ void main() async {
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,
-    child: MyApp(),
+    child:  MyApp(),
+
   ));
 }
 
@@ -55,7 +56,7 @@ class _MyAppState extends State<MyApp> {
       ..listen((user) => _appStateNotifier.update(user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      Duration(seconds: 1),
+      Duration(seconds: 5),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
